@@ -1,0 +1,172 @@
+/* 调试div排版 */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑;
+    text-decoration: none;
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: gray;
+}
+
+/* 头部 */
+
+.header {
+    background-color: #CE0000;
+    background-image: url(../img/header.bmp);
+    background-repeat: no-repeat;
+    height: 200px;
+    font-size: 65px;
+    color: white;
+    line-height: 200px;
+    text-align: center;
+}
+
+/* 导航栏 */
+
+.topnav {
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    height: 55px;
+    background-color: #fff;
+}
+
+.topnav ul {
+    list-style: none;
+    width: 1200px;
+    margin: auto;
+}
+
+.topnav li {
+    float: left;
+}
+
+.topnav li a {
+    width: 300px;
+    height: 55px;
+    display: block;
+    text-align: center;
+    line-height: 55px;
+    text-decoration: none;
+    color: black;
+}
+
+.topnav a:hover {
+    background-color: #f5f5f5;
+}
+
+/* 下拉按钮样式 */
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    font-size: 15px;
+    margin-top: 70px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 容器 <div> - 需要定位下拉内容 */
+
+.dropdown {
+    position: fixed;
+    display: inline-block;
+}
+
+/* 当下拉内容显示后修改下拉按钮的背景颜色 */
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+/* 下拉菜单 默认隐藏 */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 90px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* 下拉菜单的链接 */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* 鼠标移上去后修改下拉菜单链接颜色 */
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+/* 在鼠标移上去后显示下拉菜单 */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 内容 版心居中 */
+
+.content {
+    width: 1200px;
+    /* background-color: pink; */
+    margin: auto;
+}
+
+img {
+    width: 100%;
+}
+
+/* 文章卡片 */
+
+.card {
+    background-color: white;
+    /* background-color: pink; */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.card p {
+    text-indent: 2em;
+    line-height: 2;
+    font-size: 20px;
+}
+
+/* 页脚 */
+
+.footer {
+    height: 100px;
+    background-color: green;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.foot-content {
+    margin: auto;
+    width: 400px;
+}
+
+.footer img {
+    width: 180px;
+}
+
+.footer p {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
