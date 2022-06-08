@@ -1,4 +1,4 @@
-package com.hong.web;
+package com.hong.servlet;
 
 import com.hong.dao.UserDao;
 import com.hong.dao.UserDaoImpl;

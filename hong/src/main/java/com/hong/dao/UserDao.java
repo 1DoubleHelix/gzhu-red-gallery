@@ -11,6 +11,6 @@ public interface UserDao {
 
     public int addUser(User user) throws Exception;//插入用户
 
-    public int changeUser(User user) throws Exception;//修改用户信息
+    public int updateUser(User user) throws Exception;//修改用户信息
 
 }

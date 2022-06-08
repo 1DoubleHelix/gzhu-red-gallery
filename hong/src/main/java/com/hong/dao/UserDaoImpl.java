@@ -24,7 +24,7 @@ public class UserDaoImpl implements UserDao {
         while (resultSet.next()) {
             user.setUsername(resultSet.getString("username"));
             user.setPassword(resultSet.getString("password"));
-            user.setUid(resultSet.getString("uid"));
+            user.setUid(resultSet.getString("uid"));//修改个人信息时需要使用uid查询数据库
         }
 
         return user;
@@ -58,9 +58,11 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public int changeUser(User user) throws Exception {
+    public int updateUser(User user) throws Exception {
         Connection connection = JDBCUtils.getConnection();
         Statement statement = connection.createStatement();
+
+        //更新用户信息
         String sql = "update user set username='" + user.getUsername() + "',password='" + user.getPassword() + "',name='" + user.getName() + "',age='" + user.getAge() + "' where uid='" + user.getUid() + "';";
         return statement.executeUpdate(sql);
     }

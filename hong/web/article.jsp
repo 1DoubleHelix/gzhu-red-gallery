@@ -8,6 +8,7 @@
     <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/index.css" id="cssLink">
     <link rel="stylesheet" href="css/comment.css">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
     <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
@@ -58,9 +59,36 @@
         <p>广州大学党委书记屈哨兵表示，红色长廊是用好红色资源、发扬红色传统、传承红色基因的重要载体，也是构建全域思政育人新模式的重要依托。</p>
         <p>据介绍，红色长廊展陈包含近12万文字、近300张图片（其中近50幅为广州大学师生创作的作品），通过文字、图片、浮雕、灯光、音效、多媒体技术等综合打造一本绵延千米、多角度、立体化的党史“教科书”。</p>
         <p>“红色长廊以时间为线索，以科技互动、文化体验等多元化表现手段，打造绵延千米、沉浸式、立体化的党史学习教育新阵地，校园即思政课堂的全域性思政育人新格局呼之欲出。”屈哨兵表示。</p>
-        <div class="comment">
-            <hr>
+    </div>
 
+    <div class="card">
+        <div class="comment">
+            <div class="update">
+                <!-- 评论框 -->
+                <form action="${pageContext.request.contextPath}/updatecomment" method="post">
+                    <%--提交文章id 隐藏方式--%>
+                    <input type="hidden" name="aid" value="1">
+                    <%--提交用户名 隐藏方式--%>
+                    <input type="hidden" name="username" value="${ user.username }">
+
+                    <%--session没有值 未登录状态 不可评论--%>
+                    <c:if test="${empty user }">
+                        <input type="text" id="comment" placeholder="请先登录再评论" name="comment" readonly>
+                        <input type="submit" class="submit" value="评论" name="submint" disabled>
+                    </c:if>
+                    <%--session有值 已登录状态 显示评论框--%>
+                    <c:if test="${!empty user }">
+                        <input type="text" id="comment" placeholder="请输入评论" name="comment">
+                        <input type="submit" class="submit" value="评论" name="submint">
+                    </c:if>
+
+                </form>
+            </div>
+
+            <!-- 已有评论 -->
+            <div class="content">
+
+            </div>
         </div>
     </div>
 

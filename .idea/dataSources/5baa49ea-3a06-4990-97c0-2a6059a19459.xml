@@ -70,7 +70,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </root>
     <schema id="2" parent="1" name="hongdb">
       <Current>1</Current>
-      <Collation>latin1_swedish_ci</Collation>
+      <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
