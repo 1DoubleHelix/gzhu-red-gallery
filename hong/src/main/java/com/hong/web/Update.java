@@ -22,9 +22,7 @@ public class Update extends HttpServlet {
         req.setCharacterEncoding("utf-8");
         //接收用户名
 //        String username = req.getParameter("username");
-        //取得uid
-//        String uid = req.getParameter("uid");
-        //session
+
         HttpSession session = req.getSession();
 
         //Bean

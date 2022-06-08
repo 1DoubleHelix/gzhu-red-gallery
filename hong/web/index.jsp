@@ -118,10 +118,6 @@
     </div>
 </div>
 
-<%--<div class="container-fluid">--%>
-<%--    <!-- 引入header.jsp -->--%>
-<%--    <jsp:include page="/header.jsp"></jsp:include>--%>
-<%--</div>--%>
 </body>
 <script>
     var card = document.querySelectorAll(".card");
