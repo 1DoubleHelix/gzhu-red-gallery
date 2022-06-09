@@ -809,7 +809,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <user id="234" parent="1" name="web"/>
     <table id="235" parent="2" name="comments"/>
     <table id="236" parent="2" name="user"/>
-    <column id="237" parent="235" name="article_id">
+    <column id="237" parent="235" name="aid">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
     </column>

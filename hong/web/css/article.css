@@ -1,0 +1,34 @@
+.comment {
+    margin: auto;
+    width: 95%;
+}
+.comment .content{
+
+}
+
+input {
+    padding: 10px;
+    width: 975px;
+    margin-bottom: 15px;
+    background-color: #F5F5F5;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.submit-disable {
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.submit {
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    color: white;
+    background-color: #009600;
+}

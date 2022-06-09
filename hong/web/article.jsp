@@ -1,14 +1,18 @@
+<%@ page import="com.hong.dao.CommentDaoImpl" %>
+<%@ page import="com.hong.dao.CommentDao" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.hong.entity.Comment" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>所有文章</title>
     <link rel="icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="css/index.css" id="cssLink">
-    <link rel="stylesheet" href="css/comment.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/article.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
     <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
@@ -63,32 +67,55 @@
 
     <div class="card">
         <div class="comment">
-            <div class="update">
-                <!-- 评论框 -->
-                <form action="${pageContext.request.contextPath}/updatecomment" method="post">
-                    <%--提交文章id 隐藏方式--%>
-                    <input type="hidden" name="aid" value="1">
-                    <%--提交用户名 隐藏方式--%>
-                    <input type="hidden" name="username" value="${ user.username }">
 
-                    <%--session没有值 未登录状态 不可评论--%>
-                    <c:if test="${empty user }">
-                        <input type="text" id="comment" placeholder="请先登录再评论" name="comment" readonly>
-                        <input type="submit" class="submit" value="评论" name="submint" disabled>
-                    </c:if>
-                    <%--session有值 已登录状态 显示评论框--%>
-                    <c:if test="${!empty user }">
-                        <input type="text" id="comment" placeholder="请输入评论" name="comment">
-                        <input type="submit" class="submit" value="评论" name="submint">
-                    </c:if>
+            <!-- 评论框 -->
+            <form action="${pageContext.request.contextPath}/updatecomment" method="post">
+                <%--提交文章id 隐藏方式--%>
+                <input type="hidden" name="aid" value="1">
+                <%--提交用户名 隐藏方式--%>
+                <input type="hidden" name="username" value="${ user.username }">
 
-                </form>
-            </div>
+                <%--session没有值 未登录状态 不可评论--%>
+                <c:if test="${empty user }">
+                    <input type="text" id="comment" placeholder="请登录后评论" name="comment" readonly>
+                    <input type="submit" class="submit-disable" value="评论" name="submint" disabled>
+                </c:if>
+                <%--session有值 已登录状态 显示评论框--%>
+                <c:if test="${!empty user }">
+                    <input type="text" id="comment" placeholder="请输入评论" name="comment">
+                    <input type="submit" class="submit" value="评论" name="submint">
+                </c:if>
+            </form>
 
-            <!-- 已有评论 -->
+
+            <!-- 评论区 -->
             <div class="content">
 
+                <%
+                    //获取评论
+                    CommentDao commentDao = new CommentDaoImpl();
+                    List<Comment> commentList = null;
+                    try {
+                        commentList = commentDao.obtainComments("1");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    //展示所有评论
+                    for (int i = 0; i < commentList.size(); i++) {%>
+                <tr>
+                    <td><%=commentList.get(i).getAid() %>
+                    </td>
+                    <td><%=commentList.get(i).getUsername() %>
+                    </td>
+                    <td><%=commentList.get(i).getComment() %>
+                    </td>
+                </tr>
+                <%
+                    }
+                %>
+
             </div>
+
         </div>
     </div>
 
