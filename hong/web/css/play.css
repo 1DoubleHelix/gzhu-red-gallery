@@ -1,3 +1,7 @@
+.playnav{
+    display: inline;
+}
+
 #uls {
     width: 500px;
     height: 500px;
