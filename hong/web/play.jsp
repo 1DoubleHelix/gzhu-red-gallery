@@ -6,36 +6,12 @@
     <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/play.css">
     <link rel="stylesheet" href="css/index.css">
-    <style>
-        .tblock {
-            background-image: url("img/emblem.bmp");
-            background-size: contain;
-            width: 150px;
-            height: 150px;
-            /* background: #666; */
-            color: #fff;
-        }
-    </style>
 </head>
 <body>
-
-<!-- 导航栏 -->
-<%--<div class="topnav">--%>
-<%--    <ul>--%>
-<%--        <li><a href="index.jsp">首页</a></li>--%>
-<%--        <li><a href="#">答题</a></li>--%>
-<%--        &lt;%&ndash;session没有值，未登录状态&ndash;%&gt;--%>
-<%--        <c:if test="${empty user }">--%>
-<%--            <li><a href="login.jsp">登录</a></li>--%>
-<%--            <li><a href="register.jsp">注册</a></li>--%>
-<%--        </c:if>--%>
-<%--        &lt;%&ndash;session有值，已登录状态&ndash;%&gt;--%>
-<%--        <c:if test="${!empty user }">--%>
-<%--            <li><a href="javascript:void(0);">当前用户：${ user.username }</a></li>--%>
-<%--            <li><a href="${pageContext.request.contextPath}/logout">注销</a></li>--%>
-<%--        </c:if>--%>
-<%--    </ul>--%>
-<%--</div>--%>
+<!-- 头部 -->
+<div class="header">
+    <p>广州大学红色文化长廊</p>
+</div>
 
 <div class="content">
     <!-- 选项卡片 -->
@@ -45,16 +21,18 @@
         <!-- 选项 -->
         <p id="content" class="content"></p>
         <form action="">
-            <input type="radio" name="radioGroup" value="1"><label id="answer1" for=""></label>
-            <input type="radio" name="radioGroup" value="2"><label id="answer2" for=""></label>
-            <input type="radio" name="radioGroup" value="0"><label id="answer0" for=""></label>
-            <input type="radio" name="radioGroup" value="3"><label id="answer3" for=""></label>
+            <input type="radio" name="radioGroup" value="0"><label id="answer0"></label>
+            <input type="radio" name="radioGroup" value="1"><label id="answer1"></label>
+            <input type="radio" name="radioGroup" value="2"><label id="answer2"></label>
+            <input type="radio" name="radioGroup" value="3"><label id="answer3"></label>
             <input type="button" onclick="showSelected()" value="提交">
         </form>
     </div>
+
     <!-- 跑马灯卡片 -->
     <div class="card">
-        <p style="font-size: 10px">点击“开始”按钮进行答题，回答正确显示党徽，回答错误显示红色方块<a href="index.jsp">返回首页</a></p>
+        <p style="font-size: 15px">点击“开始”按钮进行答题，回答正确显示党徽，回答错误显示红色方块</p>
+        <p style="font-size: 15px"><a href="index.jsp">返回首页</a></p>
         <ul id='uls'>
             <li></li>
             <li></li>
@@ -71,6 +49,13 @@
         </ul>
     </div>
 
+</div>
+<!-- 页脚 -->
+<div class="footer">
+    <div class="foot-content">
+        <img src="img/gzhu.png" alt="gzhu_logo">
+        <p>邮编：510006 通讯地址：广州市大学城外环西路230号</p>
+    </div>
 </div>
 </body>
 
