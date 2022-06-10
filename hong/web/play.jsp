@@ -4,11 +4,18 @@
 <head>
     <title>党史知识答题</title>
     <link rel="icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/play.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
-    <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .tblock {
+            background-image: url("img/emblem.bmp");
+            background-size: contain;
+            width: 150px;
+            height: 150px;
+            /* background: #666; */
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 
@@ -30,11 +37,24 @@
 <%--    </ul>--%>
 <%--</div>--%>
 
-
 <div class="content">
+    <!-- 选项卡片 -->
+    <div class="card" id="ctcard" style="display: none;">
+        <!-- 题目 -->
+        <p><span id="title"></span><br></p>
+        <!-- 选项 -->
+        <p id="content" class="content"></p>
+        <form action="">
+            <input type="radio" name="radioGroup" value="1"><label id="answer1" for=""></label>
+            <input type="radio" name="radioGroup" value="2"><label id="answer2" for=""></label>
+            <input type="radio" name="radioGroup" value="0"><label id="answer0" for=""></label>
+            <input type="radio" name="radioGroup" value="3"><label id="answer3" for=""></label>
+            <input type="button" onclick="showSelected()" value="提交">
+        </form>
+    </div>
     <!-- 跑马灯卡片 -->
     <div class="card">
-        <p>点击“开始”按钮进行答题，回答正确显示党徽，回答错误显示红色方块</p>
+        <p style="font-size: 10px">点击“开始”按钮进行答题，回答正确显示党徽，回答错误显示红色方块<a href="index.jsp">返回首页</a></p>
         <ul id='uls'>
             <li></li>
             <li></li>
@@ -50,22 +70,8 @@
             <li></li>
         </ul>
     </div>
-    <!-- 选项卡片 -->
-    <div class="card" id="ctcard" style="display: none;">
-        <!-- 题目 -->
-        <p><span id="title"></span><br></p>
-        <!-- 选项 -->
-        <p id="content" class="content"></p>
-        <form action="">
-            <input type="radio" name="radioGroup" value="1"><label id="answer1" for=""></label>
-            <input type="radio" name="radioGroup" value="2"><label id="answer2" for=""></label>
-            <input type="radio" name="radioGroup" value="0"><label id="answer0" for=""></label>
-            <input type="radio" name="radioGroup" value="3"><label id="answer3" for=""></label>
-            <input type="button" onclick="showSelected()" value="提交">
-        </form>
-    </div>
-</div>
 
+</div>
 </body>
 
 <script>

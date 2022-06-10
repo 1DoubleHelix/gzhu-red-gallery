@@ -2,8 +2,20 @@
     margin: auto;
     width: 95%;
 }
-.comment .content{
 
+.comment-display {
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+.username {
+    color: #009600;
+}
+
+.comment-display p {
+    text-indent: 0;
 }
 
 input {

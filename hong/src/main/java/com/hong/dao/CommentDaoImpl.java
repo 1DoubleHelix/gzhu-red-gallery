@@ -7,7 +7,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 
 public class CommentDaoImpl implements CommentDao {
     @Override
@@ -43,7 +42,7 @@ public class CommentDaoImpl implements CommentDao {
         Statement statement = connection.createStatement();
 
         //插入评论
-        String sql = "insert into comments (aid, username, comment) values (" + comment.getAid() + ", '" + comment.getUsername() + "', '" + comment.getComment() + "');";
+        String sql = "insert into `comments` (aid, username, comment) values (" + comment.getAid() + ", '" + comment.getUsername() + "', '" + comment.getComment() + "');";
         return statement.executeUpdate(sql);
     }
 }

@@ -89,32 +89,27 @@
 
 
             <!-- 评论区 -->
-            <div class="content">
+            <%
+                //获取评论
+                CommentDao commentDao = new CommentDaoImpl();
+                List<Comment> commentList = null;
+                try {
+                    commentList = commentDao.obtainComments("1");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //展示所有评论
+                for (int i = 0; i < commentList.size(); i++) {%>
 
-                <%
-                    //获取评论
-                    CommentDao commentDao = new CommentDaoImpl();
-                    List<Comment> commentList = null;
-                    try {
-                        commentList = commentDao.obtainComments("1");
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    //展示所有评论
-                    for (int i = 0; i < commentList.size(); i++) {%>
-                <tr>
-                    <td><%=commentList.get(i).getAid() %>
-                    </td>
-                    <td><%=commentList.get(i).getUsername() %>
-                    </td>
-                    <td><%=commentList.get(i).getComment() %>
-                    </td>
-                </tr>
-                <%
-                    }
-                %>
-
+            <div class="comment-display">
+                <p class="username"><%=commentList.get(i).getUsername() %>：</p>
+                <p><%=commentList.get(i).getComment() %>
+                </p>
             </div>
+            <%
+                }
+            %>
+
 
         </div>
     </div>
@@ -142,6 +137,49 @@
         <p>广州大学相关负责人表示，接下来，广州大学党建红色文化长廊还将在长廊二楼建设多功能活动区，为师生提供多元化服务，在周边建设改造主题景观党建园、微型红色广场等。目前，线上云平台相关内容建设也在同步进行中。</p>
         <p>
             “漫步校园、途经红色长廊，我们时常驻足观看，或是约上三五好友前来打卡。”师生宣讲团成员、马克思主义学院20级研究生梁峰表示，红色长廊已经成为红色文化打卡点、又一处校园地标。广州大学人文学院、地理科学与遥感学院等基层党委(党总支、直属党支部)负责人表示，红色长廊的视觉效果与文化内涵相得益彰，极大拓展了党建红色文化新的教育空间、教育形式，将有力推动全校师生共同建设学校党建文化新品牌、思政课程与课程思政的重要阵地。</p>
+    </div>
+
+    <div class="card">
+        <div class="comment">
+
+            <!-- 评论框 -->
+            <form action="${pageContext.request.contextPath}/updatecomment" method="post">
+                <%--提交文章id 隐藏方式--%>
+                <input type="hidden" name="aid" value="2">
+                <%--提交用户名 隐藏方式--%>
+                <input type="hidden" name="username" value="${ user.username }">
+
+                <%--session没有值 未登录状态 不可评论--%>
+                <c:if test="${empty user }">
+                    <input type="text" id="comment" placeholder="请登录后评论" name="comment" readonly>
+                    <input type="submit" class="submit-disable" value="评论" name="submint" disabled>
+                </c:if>
+                <%--session有值 已登录状态 显示评论框--%>
+                <c:if test="${!empty user }">
+                    <input type="text" id="comment" placeholder="请输入评论" name="comment">
+                    <input type="submit" class="submit" value="评论" name="submint">
+                </c:if>
+            </form>
+
+            <!-- 评论区 -->
+            <%
+                try {
+                    commentList = commentDao.obtainComments("2");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //展示所有评论
+                for (int i = 0; i < commentList.size(); i++) {%>
+
+            <div class="comment-display">
+                <p class="username"><%=commentList.get(i).getUsername() %>：</p>
+                <p><%=commentList.get(i).getComment() %>
+                </p>
+            </div>
+            <%
+                }
+            %>
+        </div>
     </div>
 
     <!-- <div class="card">

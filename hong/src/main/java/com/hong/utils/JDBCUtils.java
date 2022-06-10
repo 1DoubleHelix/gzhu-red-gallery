@@ -13,6 +13,7 @@ public class JDBCUtils {
         DriverManager.registerDriver(new Driver());
 
         String url = "jdbc:mysql://localhost:3306/hongdb?useSSL=false";
+//        String url = "jdbc:mysql://localhost:3306/hongdb?useUnicode=true&characterEncoding=UTF8";
         String username = "web";
         String password = "1111";
 
