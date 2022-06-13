@@ -4,7 +4,6 @@ import com.hong.dao.CommentDaoImpl;
 import com.hong.entity.Comment;
 import org.apache.commons.beanutils.BeanUtils;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

@@ -57,7 +57,7 @@
                 <%--<input type="date" name="birthday">--%>
 
                 <label for="age">年龄</label>
-                <input type="number" min="3" max="200" name="age">
+                <input type="number" min="12" max="120" name="age">
 
 
                 <input type="submit" class="submit" width="100" value="注册" name="submit">
