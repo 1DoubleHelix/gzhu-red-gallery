@@ -29,8 +29,6 @@
     </ul>
 </div>
 
-<%--<jsp:include page="/header.jsp"></jsp:include>--%>
-
 <div class="content">
     <div class="card">
         <div class="login">

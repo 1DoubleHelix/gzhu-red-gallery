@@ -1,5 +1,4 @@
 /* 调试div排版 */
-
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +17,6 @@ hr {
 }
 
 /* 头部 */
-
 .header {
     background-color: #CE0000;
     background-image: url(../img/header.bmp);
@@ -31,7 +29,6 @@ hr {
 }
 
 /* 导航栏 */
-
 .topnav {
     z-index: 2;
     position: sticky;
@@ -65,7 +62,6 @@ hr {
 }
 
 /* 下拉按钮样式 */
-
 .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -77,20 +73,17 @@ hr {
 }
 
 /* 容器 <div> - 需要定位下拉内容 */
-
 .dropdown {
     position: fixed;
     display: inline-block;
 }
 
 /* 当下拉内容显示后修改下拉按钮的背景颜色 */
-
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
 
 /* 下拉菜单 默认隐藏 */
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -100,7 +93,6 @@ hr {
 }
 
 /* 下拉菜单的链接 */
-
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -109,19 +101,16 @@ hr {
 }
 
 /* 鼠标移上去后修改下拉菜单链接颜色 */
-
 .dropdown-content a:hover {
     background-color: #f1f1f1
 }
 
 /* 在鼠标移上去后显示下拉菜单 */
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
 /* 内容 版心居中 */
-
 .content {
     width: 1200px;
     /* background-color: pink; */
@@ -133,7 +122,6 @@ img {
 }
 
 /* 文章卡片 */
-
 .card {
     background-color: white;
     /* background-color: pink; */
@@ -148,7 +136,6 @@ img {
 }
 
 /* 页脚 */
-
 .footer {
     height: 100px;
     background-color: green;

@@ -1,4 +1,4 @@
-.playnav{
+.playnav {
     display: inline;
 }
 
@@ -29,7 +29,6 @@ li {
 
 
 /* 回答正确的方块样式 */
-
 .tblock {
     background-image: url("../img/emblem.bmp");
     background-size: contain;
@@ -40,7 +39,6 @@ li {
 
 
 /* 回答错误的方块样式 */
-
 .fblock {
     background-size: contain;
     width: 150px;
