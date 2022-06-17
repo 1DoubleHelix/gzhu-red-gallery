@@ -34,5 +34,5 @@ create table comments
 
 ## 关于项目
 
-1. 选修课作业，不会有任何维护，请勿提issue
+1. 选修课作业，应该不会再维护，请勿提issue
 2. 如果对你有帮助希望点亮star
